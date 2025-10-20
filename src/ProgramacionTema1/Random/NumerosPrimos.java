@@ -14,7 +14,6 @@ public class NumerosPrimos {
             }
             if (primo) {
                 System.out.println(num + ": es primo!!!");
-                break;
             }
             else {
                 System.out.println(num + ": no");
