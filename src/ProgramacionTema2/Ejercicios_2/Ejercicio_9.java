@@ -15,12 +15,11 @@ public class Ejercicio_9 {
         int num1 = 0;
         int num2 = 1;
 
-        System.out.print(num1 + ", ");
         for (int i = 1; i <= cantidad; i++) {
+            System.out.print(num1 + (i < cantidad ? ", " : ""));
+            int sig = num1 + num2;
             num1 = num2;
-            System.out.print(num2 + ", ");
-            num2 += num1;
-
+            num2 = sig;
         }
 
     }
