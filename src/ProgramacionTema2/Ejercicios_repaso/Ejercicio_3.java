@@ -1,10 +1,10 @@
-package ProgramacionTema2.Pruebas;
+package ProgramacionTema2.Ejercicios_repaso;
 
 //Implementa un metodo que reciba un nombre y edad y muestre un mensaje personalizado.
 
 import java.util.Scanner;
 
-public class NombreYEdad {
+public class Ejercicio_3 {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);

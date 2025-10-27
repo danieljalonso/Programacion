@@ -1,10 +1,10 @@
-package ProgramacionTema2.Pruebas;
+package ProgramacionTema2.Ejercicios_repaso;
 
 import java.util.Scanner;
 
 //Escribe un metodo para calcular el area de un rectangulo dados base y altura.
 
-public class AreaRectangulo {
+public class Ejercicio_4 {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
