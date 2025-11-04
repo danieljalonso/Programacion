@@ -3,7 +3,7 @@ package ProgramacionTema2.Ejercicios_3;
 import java.util.Scanner;
 
 /*
-Haz programa que ordene alfabéticamente las letras de una frase.
+Haz un programa que ordene alfabéticamente las letras de una frase.
 El programa debe pedir por teclado una frase y escribirla con las letras ordenadas.
 Ejemplo: Tecleando la palabra “hola”.
 Escribirá “ahlo”.
@@ -27,7 +27,40 @@ public class Ejercicio_10 {
 
         Scanner sc = new Scanner(System.in);
 
+        System.out.println("Escribe una frase");
+        String frase = sc.nextLine();
 
+        String ordenado = ordenar(frase);
+
+        System.out.println("Tu palabra ordenada alfabéticamente es: " + ordenado);
+
+    }
+
+    static String ordenar(String frase) {
+        String ordenado = "";
+        while (frase.length() > 0) {
+            char letraMenor = obtenerLetraMenor(frase);
+            ordenado += letraMenor;
+            frase = eliminarLetra(frase, letraMenor);
+        }
+        return ordenado;
+
+    }
+
+    static char obtenerLetraMenor(String frase) {
+        char menor = frase.charAt(0);
+        for (int i = 1; i < frase.length(); i++) {
+            if (frase.charAt(i) < menor) {
+                menor = frase.charAt(i);
+            }
+        }
+        return menor;
+
+    }
+
+    static String eliminarLetra(String frase, char letraMenor) {
+        int posicion = frase.indexOf(letraMenor);
+        return frase.substring(0, posicion) + frase.substring(posicion + 1);
 
     }
 }
