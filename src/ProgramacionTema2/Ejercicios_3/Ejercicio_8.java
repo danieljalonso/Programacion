@@ -21,23 +21,30 @@ public class Ejercicio_8 {
 
         System.out.print("Escribe la cadena para cifrar: ");
         String cadena = sc.nextLine();
+        int opcion;
+        boolean salir = false;
+        do {
+            System.out.println("Qué quieres hacer?  cifrar=0 ; descifrar=1");
+            opcion = sc.nextInt();
 
-        System.out.println("Qué quieres hacer?  cifrar=0 ; descifrar=1");
-        int opcion = sc.nextInt();
+            switch (opcion) {
+                case 0:
+                    cifrado = cifrar(cadena);
+                    System.out.println("Cifrado: " + cifrado);
+                    salir = true;
+                    break;
+                case 1:
+                    descifrado = descifrar(cadena);
+                    System.out.println("Descirado: " + descifrado);
+                    salir = true;
+                    break;
+                default:
+                    System.out.println("Opcion no válida");
+            }
+        } while (!salir);
 
-        switch (opcion) {
-            case 0:
-                cifrado = cifrar(cadena);
-                System.out.println("Cifrado: " + cifrado);
-                break;
-            case 1:
-                descifrado = descifrar(cadena);
-                System.out.println("Descirado: " + descifrado);
-                break;
-            default:
-                System.out.println("Opcion no válida");
-        }
         sc.close();
+
     }
 
     static String cifrar(String cadena) {
