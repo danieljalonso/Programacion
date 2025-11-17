@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class Ejercicio_5 {
-    static void main() {
+    public static void main(String[] args) {
 
         Random r = new Random();
 

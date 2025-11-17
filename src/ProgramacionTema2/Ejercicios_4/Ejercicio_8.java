@@ -4,7 +4,7 @@ package ProgramacionTema2.Ejercicios_4;
 //aquel en el que las filas, las columnas y las diagonales suman igual.
 
 public class Ejercicio_8 {
-    static void main() {
+    public static void main(String[] args) {
 
         int sumaPropuesta = 0;
         int sumaDiagonal1 = 0;

@@ -5,7 +5,7 @@ package ProgramacionTema2.Ejercicios_4;
 import java.util.Arrays;
 
 public class Ejercicio_9 {
-    static void main() {
+    public static void main(String[] args) {
 
         int[] array1 = {4, 8, 25, 22, 25, 40};
         int[] array2 = {3, 6, 18, 21, 25, 47};
