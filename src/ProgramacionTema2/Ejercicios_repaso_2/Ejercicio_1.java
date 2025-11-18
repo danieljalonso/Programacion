@@ -23,6 +23,7 @@ public class Ejercicio_1 {
         System.out.println("De cuantas filas quieres el arbol?");
         int lineas = sc.nextInt();
 
+        // Hojas
         for (int i = 1; i <= lineas; i++) {
             for (int j = i; j < lineas; j++) {
                 System.out.print(" ");
@@ -32,6 +33,8 @@ public class Ejercicio_1 {
             }
             System.out.println();
         }
+
+        // Tronco
         for (int i = 1; i <= lineas / 2; i++) {
             for (int j = 1; j < lineas; j++){
                 System.out.print(" ");
