@@ -31,7 +31,6 @@ public class Ejercicio_8 {
             }
             if (sumaFila != sumaPropuesta) {
                 esMagico = false;
-                break;
             }
         }
 
@@ -42,7 +41,6 @@ public class Ejercicio_8 {
             }
             if (sumaColumna != sumaPropuesta) {
                 esMagico = false;
-                break;
             }
         }
 
