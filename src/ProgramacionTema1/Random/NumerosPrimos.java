@@ -3,8 +3,8 @@ package ProgramacionTema1.Random;
 public class NumerosPrimos {
     public static void main(String[] args) {
 
-        int num = 104;
-        while (true) {
+        int num = 1;
+        while (num < 100) {
             boolean primo = true;
             for (int i = 2; i <= num / 2; i++) {
                 if (num % i == 0) {
