@@ -8,11 +8,11 @@ public class Ejercicio_8 {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Dime la base");
-        int base = sc.nextInt();
+        double base = sc.nextDouble();
         System.out.println("Dime la altura");
-        int altura = sc.nextInt();
+        double altura = sc.nextDouble();
 
-        int area = areaRectangulo(base, altura);
+        double area = areaRectangulo(base, altura);
 
         System.out.println("El area es: " + area);
 
@@ -24,7 +24,7 @@ public class Ejercicio_8 {
         System.out.println(par ? "Es par" : "Es impar");
 
     }
-    static int areaRectangulo(int base, int altura) {
+    static double areaRectangulo(double base, double altura) {
         return base * altura;
     }
     static boolean esPar(int num) {
