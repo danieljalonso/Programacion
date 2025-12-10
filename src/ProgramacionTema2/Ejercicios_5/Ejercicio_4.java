@@ -13,7 +13,14 @@ Da como salida: “nesLu”
 public class Ejercicio_4 {
     public static void main(String[] args) {
 
+        String texto = "federico";
+        int veces = 3;
 
+        String textoRotado = "";
+        textoRotado += texto.substring(texto.length() - veces);
+        textoRotado += texto.substring(0, texto.length() - veces);
+
+        System.out.println(textoRotado);
 
     }
 }
