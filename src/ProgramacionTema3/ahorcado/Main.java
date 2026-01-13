@@ -9,6 +9,11 @@ public class Main {
 
         int n = 1;
 
+        System.out.println("╔════════════════════╗");
+        System.out.println("║     AHORCADO       ║");
+        System.out.println("╚════════════════════╝");
+
+
         while (n != 2){
             System.out.println("1 para jugar o 2 para salir");
             n = sc.nextInt();
@@ -26,5 +31,6 @@ public class Main {
             }
         }
 
+        sc.close();
     }
 }

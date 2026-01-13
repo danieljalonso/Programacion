@@ -1,4 +1,4 @@
-package ProgramacionTema3;
+package ProgramacionTema3.Random;
 
 public class Television {
 
