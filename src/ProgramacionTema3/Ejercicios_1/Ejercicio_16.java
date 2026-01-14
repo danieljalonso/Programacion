@@ -20,12 +20,37 @@ public class Ejercicio_16 {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Escribe una palabra");
-        String p = sc.next();
+        int a = 0;
+        int e = 0;
+        int i = 0;
+        int o = 0;
+        int u = 0;
 
-        for (int i = 0; i < p.length(); i++) {
-            if ()
+        System.out.println("Escribe una palabra");
+        String p = sc.next().toLowerCase();
+
+        int pos = 0;
+        boolean masDeDos = false;
+
+        while (pos < p.length() && !masDeDos) {
+            char c = p.charAt(pos);
+
+            if (c == 'a') a++;
+            if (c == 'e') e++;
+            if (c == 'i') i++;
+            if (c == 'o') o++;
+            if (c == 'u') u++;
+
+            if (a > 2 || e > 2 || i > 2 || o > 2 || u > 2) {
+                masDeDos = true;
+            }
+
+            pos++;
         }
 
+        if (masDeDos) System.out.println("Tiene mas de dos vocales iguales");
+        else System.out.println("No tiene mas de dos vocales iguales");
+
+        sc.close();
     }
 }
