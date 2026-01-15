@@ -1,6 +1,5 @@
-package ProgramacionTema3.Ejercicios_1;
+package ProgramacionTema3.Ejercicios_String;
 
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 

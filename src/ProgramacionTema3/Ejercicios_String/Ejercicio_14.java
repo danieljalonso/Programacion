@@ -1,4 +1,4 @@
-package ProgramacionTema3.Ejercicios_1;
+package ProgramacionTema3.Ejercicios_String;
 
 /*
 Implementa un programa que intercale las letras de dos palabras.
@@ -13,7 +13,6 @@ Segunda palabra “correo”
 Da como salida: “IcNoTrErReNoET”
  */
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Ejercicio_14 {

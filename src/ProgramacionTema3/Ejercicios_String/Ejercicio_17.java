@@ -1,4 +1,4 @@
-package ProgramacionTema3.Ejercicios_1;
+package ProgramacionTema3.Ejercicios_String;
 
 /*
 Desarrolla un programa que averigüe cuantas asignaturas tiene aprobadas un alumno.
@@ -21,9 +21,27 @@ Además siempre existirá el mismo número de notas que de asignaturas.
 El número de asignaturas no es fijo, pueden ser 4, 5, 6 o más.
  */
 
+import java.util.Scanner;
+
 public class Ejercicio_17 {
     public static void main(String[] args) {
 
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Dime las asignaturas separadas con :");
+        String asig = sc.nextLine();
+        System.out.println("Dime las notas separadas con :");
+        String not = sc.nextLine();
+
+        String[] asignaturas = asig.split(":");
+        String[] notas = not.split(":");
+
+        System.out.print("Las asignaturas aprobadas son: ");
+        for (int i = 0; i < asignaturas.length; i++) {
+            if (Integer.parseInt(notas[i]) >= 5) {
+                System.out.print(asignaturas[i] + " ");
+            }
+        }
 
 
     }

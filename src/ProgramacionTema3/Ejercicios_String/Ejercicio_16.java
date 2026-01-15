@@ -1,4 +1,4 @@
-package ProgramacionTema3.Ejercicios_1;
+package ProgramacionTema3.Ejercicios_String;
 
 /*
 Realiza un programa que compruebe si en una palabra se repite
