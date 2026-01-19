@@ -15,7 +15,7 @@ public class Main {
 
 
         while (n != 2){
-            System.out.println("1 para jugar o 2 para salir");
+            System.out.println("\n1 para jugar o 2 para salir");
             n = sc.nextInt();
 
             switch (n) {
@@ -31,6 +31,5 @@ public class Main {
             }
         }
 
-        sc.close();
     }
 }
