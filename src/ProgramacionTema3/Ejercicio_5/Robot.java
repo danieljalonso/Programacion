@@ -23,7 +23,7 @@ public class Robot {
 
     // Métodos
     public void mostrarEstadisticas() {
-        System.out.printf("El robot %s tiene %f de vida, hace %f de daño y tiene un blindaje de %f\n", nombre, vida, potenciaAtaque, blindaje);
+        System.out.printf("El robot %s modelo %s tiene %.2f de vida, hace %.2f de daño y tiene un blindaje de %.2f\n", nombre, modelo, vida, potenciaAtaque, blindaje);
     }
 
     private void recibirDano(double cantidad) {

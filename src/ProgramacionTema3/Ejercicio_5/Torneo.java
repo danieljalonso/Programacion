@@ -15,8 +15,8 @@ public class Torneo {
             if (r2.estaVivo()) {
                 r2.atacar(r1);
             }
-            System.out.println("Mazinger: " + r1.getVida() + " puntos de vida");
-            System.out.println("Optimus: " + r2.getVida() + " puntos de vida");
+            System.out.printf("Mazinger: %.2f puntos de vida\n", r1.getVida());
+            System.out.printf("Optimus: %.2f puntos de vida\n", r2.getVida());
             System.out.println("------------------------");
         }
 
