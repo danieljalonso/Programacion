@@ -14,6 +14,7 @@ public class Main {
         System.out.println("╚════════════════════╝");
 
 
+
         while (n != 2){
             System.out.println("\n1 para jugar o 2 para salir");
             n = sc.nextInt();
@@ -23,7 +24,7 @@ public class Main {
                     juego.iniciar();
                     break;
                 case 2:
-                    System.out.println("Okey, adios!!!");
+                    System.out.println("Ya te rindes, jajaja , pringao!");
                     break;
                 default:
                     System.out.println("Operacion incorrecta!");

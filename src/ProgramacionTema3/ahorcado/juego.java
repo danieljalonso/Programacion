@@ -100,8 +100,7 @@ public class juego {
                 contadorIntentos++;
             }
             if (letrasPorAdivinar > 0) {
-                contadorIntentos++;
-                System.out.println("Llevas " + contadorIntentos + " intentos de " + intentosMaximos);
+                System.out.println("Llevas " + contadorIntentos + " fallos de " + intentosMaximos);
             } else {
                 System.out.println("HAS GANADO, la palabra es: " + palabraSecreta);
             }

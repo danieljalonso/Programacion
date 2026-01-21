@@ -1,4 +1,4 @@
-package ProgramacionTema3.Ejercicios_4;
+package ProgramacionTema3.Ejercicio_4;
 
 public class NaveEspacial {
 

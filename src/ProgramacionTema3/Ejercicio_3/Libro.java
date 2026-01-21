@@ -1,4 +1,4 @@
-package ProgramacionTema3.Ejercicios_3;
+package ProgramacionTema3.Ejercicio_3;
 
 public class Libro {
 
