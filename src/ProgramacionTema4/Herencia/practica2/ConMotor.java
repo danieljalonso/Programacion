@@ -1,4 +1,4 @@
-package ProgramacionTema4.Herencia1.practica2;
+package ProgramacionTema4.Herencia.practica2;
 
 public class ConMotor extends Vehiculo{
 

@@ -1,4 +1,4 @@
-package ProgramacionTema4.Herencia1.PruebaVideojuegos;
+package ProgramacionTema4.Herencia.PruebaVideojuegos;
 
 public class PruebaVideojuego {
     public static void main(String[] args) {

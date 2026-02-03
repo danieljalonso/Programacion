@@ -1,4 +1,4 @@
-package ProgramacionTema4.Herencia1.practica1;
+package ProgramacionTema4.Herencia.practica1;
 
 public class FiguraTriangulo extends Figuras{
 
