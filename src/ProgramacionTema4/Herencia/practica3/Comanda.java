@@ -8,10 +8,10 @@ public class Comanda {
     int numComensales;
     Plato[] platos;
 
-    public Comanda(int numMesa, int numComensales, int cantidad) {
+    public Comanda(int numMesa, int numComensales, Plato[] platos) {
         this.numMesa = numMesa;
         this.numComensales = numComensales;
-        this.platos = new Plato[cantidad];
+        this.platos = platos;
     }
 
     public double coste() {
@@ -34,7 +34,11 @@ public class Comanda {
     }
 
     public String toString() {
-        return Arrays.toString(platos);
+        String plato = "";
+        for (Plato p : platos) {
+            plato += p + "\n -------------------------------------------------------- \n";
+        }
+        return plato;
     }
 
 }
