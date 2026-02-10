@@ -10,6 +10,10 @@ public class Lavadora extends Electrodomestico{
         this.precioBase = reglaNegocio();
     }
 
+    public Lavadora(double precioBase, double peso) {
+        super(precioBase, "Blanco", 'F', peso);
+    }
+
     private double reglaNegocio() {
         if (carga > 30) {
             return precioBase * 1.10;
@@ -17,4 +21,8 @@ public class Lavadora extends Electrodomestico{
         return precioBase;
     }
 
+    @Override
+    public String toString() {
+        return "La lavadora " + super.toString() + " y aguanta " + carga + "kg de carga";
+    }
 }
