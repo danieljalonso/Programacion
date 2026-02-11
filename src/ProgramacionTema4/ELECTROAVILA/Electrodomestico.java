@@ -12,12 +12,10 @@ public abstract class Electrodomestico {
 
     public Electrodomestico(double precioBase, String color, char consumo, double peso) {
         this.precioBase = precioBase;
-        this.color = "Blanco";
-        this.consumo = 'F';
+        this.color = registrarColor(color);
+        this.consumo = registrarConsumo(consumo);;
         this.peso = peso;
 
-        registrarColor(color);
-        registrarConsumo(consumo);
         this.precioFinal = calcularPrecioFinal();
     }
 
@@ -25,18 +23,20 @@ public abstract class Electrodomestico {
         this(precioBase, "Blanco", 'F', peso);
     }
 
-    private void registrarColor(String nuevoColor) {
+    private String registrarColor(String color) {
         for (String c : COLORES) {
-            if (nuevoColor.equals(c)) {
-                color = c;
+            if (color.equals(c)) {
+                return color;
             }
         }
+        return "Blanco";
     }
 
-    private void registrarConsumo(char consumo) {
+    private char registrarConsumo(char consumo) {
         if (consumo >= 'A' && consumo <= 'F') {
-            this.consumo = consumo;
+            return consumo;
         }
+        return 'F';
     }
 
     private double calcularPrecioFinal() {
@@ -67,6 +67,5 @@ public abstract class Electrodomestico {
     public double getPrecioFinal() {
         return precioFinal;
     }
-
 
 }
