@@ -13,7 +13,7 @@ public abstract class Electrodomestico {
     public Electrodomestico(double precioBase, String color, char consumo, double peso) {
         this.precioBase = precioBase;
         this.color = registrarColor(color);
-        this.consumo = registrarConsumo(consumo);;
+        this.consumo = registrarConsumo(consumo);
         this.peso = peso;
 
         this.precioFinal = calcularPrecioFinal();
