@@ -41,4 +41,13 @@ public class Venta {
         return ventasFecha;
     }
 
+    /*
+    Listar el acumulado de ventas por plataforma.
+    Listar el acumulado de ventas por género.
+    Mostrar el título más vendido.
+    Mostrar el mejor día de ventas.
+     */
+
+
+
 }
