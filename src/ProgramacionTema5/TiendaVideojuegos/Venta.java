@@ -16,6 +16,12 @@ public class Venta {
         this.fecha = fecha;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Venta{" +
+                "cliente=" + cliente +
+                ", videojuegos=" + videojuegos +
+                ", fecha=" + fecha +
+                '}';
+    }
 }

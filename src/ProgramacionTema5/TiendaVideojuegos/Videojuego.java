@@ -1,7 +1,5 @@
 package ProgramacionTema5.TiendaVideojuegos;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
 public class Videojuego {
@@ -26,5 +24,15 @@ public class Videojuego {
         return UUID.randomUUID();
     }
 
-
+    @Override
+    public String toString() {
+        return "Videojuego{" +
+                "titulo='" + titulo + '\'' +
+                ", plataforma='" + plataforma + '\'' +
+                ", genero='" + genero + '\'' +
+                ", precio=" + precio +
+                ", stock=" + stock +
+                ", codigo=" + codigo +
+                '}';
+    }
 }

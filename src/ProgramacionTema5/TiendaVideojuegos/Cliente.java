@@ -19,4 +19,14 @@ public class Cliente {
         this.codigo = codigo;
     }
 
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "nombre='" + nombre + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", email='" + email + '\'' +
+                ", codigo=" + codigo +
+                '}';
+    }
 }
