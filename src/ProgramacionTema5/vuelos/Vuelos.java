@@ -1,9 +1,7 @@
 package ProgramacionTema5.vuelos;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Vuelos {
 
@@ -101,11 +99,11 @@ public class Vuelos {
             }
             preciosMedios.put(vuelo, (preciosTotales / contador));
         }
-        return preciosMedios;
+        return ordenarMaps(preciosMedios);
     }
 
     public static Map<String, Double> getGastoPorDNI(Map<String, Map<String, Double>> vuelosPasajerosCoste) {
-        Map<String, Double>  gastoPorDNI = new HashMap<>();
+        Map<String, Double> gastoPorDNI = new HashMap<>();
         for (Map<String, Double> vuelo : vuelosPasajerosCoste.values()) {
             for (String pasajero : vuelo.keySet()) {
                 double precio = vuelo.get(pasajero);
@@ -118,6 +116,18 @@ public class Vuelos {
             }
 
         }
-        return gastoPorDNI;
+        return ordenarMaps(gastoPorDNI);
+    }
+
+    public static Map<String, Double> ordenarMaps(Map<String, Double> sinOrdenar) {
+        List<Map.Entry<String, Double>> ordenado = new ArrayList<>(sinOrdenar.entrySet());
+        ordenado.sort(Map.Entry.comparingByValue());
+
+        Map<String, Double> resultado = new LinkedHashMap<>();
+        for (Map.Entry<String, Double> o : ordenado) {
+            resultado.put(o.getKey(), o.getValue());
+        }
+
+        return resultado;
     }
 }
