@@ -105,7 +105,19 @@ public class Vuelos {
     }
 
     public static Map<String, Double> getGastoPorDNI(Map<String, Map<String, Double>> vuelosPasajerosCoste) {
-        // TODO
-        return null;
+        Map<String, Double>  gastoPorDNI = new HashMap<>();
+        for (Map<String, Double> vuelo : vuelosPasajerosCoste.values()) {
+            for (String pasajero : vuelo.keySet()) {
+                double precio = vuelo.get(pasajero);
+
+                if (gastoPorDNI.containsKey(pasajero)) {
+                    gastoPorDNI.put(pasajero, gastoPorDNI.get(pasajero) + precio);
+                } else  {
+                    gastoPorDNI.put(pasajero, precio);
+                }
+            }
+
+        }
+        return gastoPorDNI;
     }
 }
