@@ -37,8 +37,15 @@ public class OperacionAlonso {
         // TODO: Rellenar mapaFallos. Ejemplo: "Servidores" -> {"Login": 2}
         for (Map<String, Object> m : eventosUnicos) {
             String zona = m.get("zona").toString();
-            mapaFallos.put(zona, new HashMap<String, Integer>());
-
+            String tipo = (String) m.get("tipo");
+            if (!mapaFallos.containsKey(zona)) {
+                mapaFallos.put(zona, new HashMap<>());
+            }
+            if (!mapaFallos.get(zona).containsKey(tipo)) {
+                mapaFallos.get(zona).put(tipo, 1);
+            } else {
+                mapaFallos.get(zona).put(tipo, mapaFallos.get(zona).get(tipo) + 1);
+            }
         }
 
 
@@ -46,13 +53,32 @@ public class OperacionAlonso {
         // Si el total de fallos de una zona en 'mapaFallos' > limite en 'limitesZona'
         List<String> zonasComprometidas = new ArrayList<>();
         // TODO: Recorrer mapaFallos, sumar sus valores y comparar con limitesZona
+        for (String zona : mapaFallos.keySet()) {
+            int max = limitesZona.getOrDefault(zona, 0);
+            int sum = 0;
+            for (Integer valor : mapaFallos.get(zona).values()) {
+                sum += valor;
+            }
+            if (sum > max) {
+                zonasComprometidas.add(zona);
+            }
+        }
+
 
 
         // T4: Ranking de Tipos de Ataque (Map)
         // Queremos saber qué 'tipo' es el más usado en los fallos (conteo global)
         Map<String, Integer> frecuenciaTipos = new TreeMap<>();
         // TODO: Contar cuántas veces aparece cada "tipo" en los eventos fallidos únicos
-
+        for (Map<String, Integer> tiposYFallos : mapaFallos.values()) {
+            for (String tipo : tiposYFallos.keySet()) {
+                if (frecuenciaTipos.containsKey(tipo)) {
+                    frecuenciaTipos.put(tipo, frecuenciaTipos.get(tipo) + tiposYFallos.get(tipo));
+                } else {
+                    frecuenciaTipos.put(tipo, tiposYFallos.get(tipo));
+                }
+            }
+        }
 
         // --- SALIDA DE RESULTADOS ---
         System.out.println("Eventos únicos procesados: " + eventosUnicos.size());
