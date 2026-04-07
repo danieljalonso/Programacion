@@ -1,7 +1,6 @@
 package ProgramacionTema3.ahorcado;
 
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class juego {
 
@@ -66,8 +65,9 @@ public class juego {
             "frase","palabra","letra","silaba","vocal","consonante","abecedario"
     };
 
-    public static void iniciar() {
+    public static boolean iniciar() {
         String palabraSecreta = palabras[r.nextInt(palabras.length)];
+        Set<Character> letras = new LinkedHashSet<>();
         int contadorIntentos = 0;
         int intentosMaximos = 8;
         int letrasPorAdivinar = palabraSecreta.length();
@@ -84,6 +84,7 @@ public class juego {
             System.out.println("Introduce una letra");
             String teclado = sc.next().toLowerCase();
             char letra = teclado.charAt(0);
+            letras.add(letra);
 
             if (palabraSecreta.contains(String.valueOf(letra))) {
                 System.out.println("La letra " + letra + " está en la palabra secreta");
@@ -101,17 +102,20 @@ public class juego {
             }
             if (letrasPorAdivinar > 0) {
                 System.out.println("Llevas " + contadorIntentos + " fallos de " + intentosMaximos);
+                System.out.println("Letras usadas: " + letras);
             } else {
                 System.out.println("HAS GANADO, la palabra es: " + palabraSecreta);
+                return true;
             }
 
         }
 
         if (contadorIntentos >= intentosMaximos) {
             System.out.println("Vaya... Has perdido, la palabra era: " + palabraSecreta);
+            return false;
         }
 
-
+        return false;
     }
 
 }

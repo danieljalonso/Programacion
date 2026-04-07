@@ -8,6 +8,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         int n = 1;
+        int win = 0;
+        int lose = 0;
 
         System.out.println("╔════════════════════╗");
         System.out.println("║     AHORCADO       ║");
@@ -21,10 +23,15 @@ public class Main {
 
             switch (n) {
                 case 1:
-                    juego.iniciar();
+                    boolean resultado = juego.iniciar();
+                    if (resultado) win++;
+                    else lose++;
                     break;
                 case 2:
-                    System.out.println("Ya te rindes, jajaja , pringao!");
+                    System.out.println("Ya te rindes, jajaja, pringao!");
+                    System.out.println("------------------------------");
+                    System.out.println("ESTADISTICAS:\nVictorias: " + win + "\nDerrotas: " + lose);
+                    System.out.println();
                     break;
                 default:
                     System.out.println("Operacion incorrecta!");
