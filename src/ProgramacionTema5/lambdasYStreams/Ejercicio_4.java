@@ -10,6 +10,7 @@ public class Ejercicio_4 {
         int sumaTotal = numeros.stream()
                 .mapToInt(n -> n)
                 .sum();
+
         double media = numeros.stream()
                 .mapToInt(n -> n)
                 .average()
@@ -17,5 +18,6 @@ public class Ejercicio_4 {
 
         System.out.println("Suma: " + sumaTotal);
         System.out.println("Media: " + media);
+
     }
 }
