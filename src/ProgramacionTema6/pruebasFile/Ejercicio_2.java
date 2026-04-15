@@ -13,6 +13,11 @@ public class Ejercicio_2 {
     public static void main(String[] args) {
 
         Path diario = Paths.get("diario.txt");
+        try {
+            if (!Files.exists(diario)) Files.createFile(diario);
+        } catch (IOException e) {
+            System.out.println("Error al crear el fichero, " + e.getMessage());
+        }
 
         Scanner sc = new Scanner(System.in);
         String linea;
