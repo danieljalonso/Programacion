@@ -37,7 +37,7 @@ public class GestorInstituto {
             Class.forName("com.musql.cj.jdbc.Driver");
             conexion = DriverManager.getConnection(URL, USUARIO, PASSWORD);
         } catch (ClassNotFoundException e) {
-            System.err.println("No se ha encontrado el driver de MySQL");
+            System.err.println("No se ha encontrado el driver de MySQL, " + e.getMessage());
         } catch (SQLException e) {
             System.out.println("Error de SQL al conectar, " + e.getMessage());
         }
