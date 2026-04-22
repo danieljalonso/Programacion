@@ -4,11 +4,6 @@ import java.sql.*;
 
 public class GestorInstituto {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/instituto_db";
-    private static final String USUARIO = "root";
-    private static final String PASSWORD = ""; // Que cada alumno ponga la suya
-    private static Connection conexion;
-
     // TODO Paso 1: Crear el método conectar() y desconectar()
     // Mantenemos una única conexión en toda la aplicación
 
@@ -26,23 +21,44 @@ public class GestorInstituto {
 
     public static void main(String[] args) {
         GestorInstituto gestor = new GestorInstituto();
+
+        InstitutoDBDAO logica = new InstitutoDBDAO();
         // Aquí iremos probando los métodos paso a paso
 
-        Connection conexion = conectar();
+        logica.conectar();
         System.out.println("Estamos conectados a la base de datos");
-    }
 
-    public static Connection conectar() {
         try {
-            Class.forName("com.musql.cj.jdbc.Driver");
-            conexion = DriverManager.getConnection(URL, USUARIO, PASSWORD);
-        } catch (ClassNotFoundException e) {
-            System.err.println("No se ha encontrado el driver de MySQL, " + e.getMessage());
+            logica.conexion.setAutoCommit(false);
+            logica.registrarAlumno("Rafa", "rafa@educa.jcyl.es");
+            logica.registrarAlumno("Laura", "laura@educa.jcyl.es");
+            logica.registrarAlumno("Blanca", "blanca@educa.jcyl.es");
+            logica.conexion.commit();
         } catch (SQLException e) {
-            System.out.println("Error de SQL al conectar, " + e.getMessage());
+            System.err.println("Error al insertar los alumnos, " + e.getMessage());
+            try {
+                logica.conexion.rollback();
+            } catch (SQLException ex) {
+                System.err.println("Error al hacer rollback, " + ex.getMessage());
+            }
         }
-        return conexion;
-    }
 
+        try {
+            logica.conexion.setAutoCommit(false);
+            logica.matricularAlumno(3, 1);
+            logica.conexion.commit();
+        } catch (SQLException e) {
+            System.err.println("Error al insertar la matricula, " + e.getMessage());
+            try {
+                logica.conexion.rollback();
+            } catch (SQLException ex) {
+                System.err.println("Error al hacer rollback, " + ex.getMessage());
+            }
+        }
+
+        logica.mostrarAlumnos();
+
+        logica.desconectar();
+    }
 
 }
